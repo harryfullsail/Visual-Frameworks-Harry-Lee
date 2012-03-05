@@ -13,72 +13,85 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<meta name="HandheldFriendly" content"True">
 		<meta name="ModileOptimized" content="320" />
-	
-	<title>Book Organizer</title>	
+		<title>Wab App Part 1</title>	
 		
 	<link href="css/style.css" ref="stylesheet" type="text/css" />	
 	
 	<script src="js/scripts" type="text/javascript"></script>
 	
 	</head>
-	
 	<body>
-		
 		<header>
-		<h1>Book List</h1>
+			<h1>Book Organizer</h1>
+			<h2>Book Lists</h2>
+			<h2>Select you Category Group:</h2>
 		</header>
-		
-		<h1>Select you Category Group:</h1>
+		<form action="#" method="post">
 		
 		<ul>
-			<li><a href="#">Books Read</a></li>
-			<li><a href="#">Books I will read</a></li>
-			<li><a href="#">Books I might read</a></li>
+			<select id="options">	
+				<optgroup>
+					<option value="Books Read">Books Read</option>
+					<option value="Books I will read">Books I will read</option>
+					<option value="Books I might read">Books I might read</option>
+				</optgroup>
+			</select>
 		</ul>
-		
-		<h1>Item Info:</h1>
-
-<form action="#" method=post">
-	<fieldset>
-		<legend>Look Up</legend>
+			<h2>Item Info:</h2>
+		<!--<fieldset>-->
+		<!--<legend>Look Up</legend>-->
 		<ul>
-			<li><lebel for="title">Title:</label><input type="text" id="title" /></li>
 			<li><lebel for="author">Author:</label><input type="text" id="author" /></li>
+			<li><lebel for="title">Title:</label><input type="text" id="title" /></li>
 		</ul>
-	</fieldset>
-	<fieldset>
-		<Legend></Legend>
+		<!--</fieldset>-->
+		<!--<fieldset>-->
+		<!--<Legend>S</Legend>-->
+		
+		<ul
+			<p>Nunber of books to Display</p>
+			<input type="range" checked value"" id="" /><label for=""></label/>
+		</ul>
 		<ul>
-			<li>Check Your favorite Categories:
+			<li>Check Your favorite Categories:</li>
 				<ul>
 					<li><input type="checkbox" checked value"Mysteries" id="mysteries" /><label for="mysteries">Mysteries</label></li> 
-					<li><input type="checkbox" checked value"Romance" id="romance" /><label for="romance">Romance</label></li> 
+					<li><input type="checkbox" checked value"Romance" id="romance" /><label for="romance">Romance</label></li>
 					<li><input type="checkbox" checked value"Sci-Fi & Fantassy" id="sci-Fi & Fantassy" /><label for="sci-Fi & Fantassy">Sci-Fi & Fantassy</label></li>
 				</ul>
-<ul>
-	<select id="options">	
-		<optgroup>
-			<option value="Books Read">Books Read</option>
-			<option value="Books I will read">Books I will read</option>
-			<option value="Books I might read">Books I might read</option>
-		</optgroup
-	</select>
-</li>
-</ul>
-				<fieldset>
-				<Legend></Legend>
-				<ul>
-						<li><Label for"comments">Notes:</Label><textarea id="comments"></textarea></li>
-						</ul>
-				</fieldset>
-					
-					</ul>
-					</fieldset>
+	<!--</fieldset>-->
+	<!--<fieldset>-->
+	<!--<Legend>Note:</Legend>-->
+	
+		<group>
+		<p>
+			<li>Date Enter:</li>
+			<input type="text" id="date" />
+			<select>
+			<option value=""></option>
+			</select>
+		</group>
+		<!--<group>-->
+		<p>
+			<li>Notes:</li>
+			<Label for"comments"></Label><textarea id="comments"></textarea/>
+			
+		<!--</group>-->
+	<!--</fieldset>-->
+	
+	
+				<p>
 				<input type="submit" value="Submit" />
-			<h2>Note:</h2>
+			<footer>
+			<a href="#">clear local storage</a>
+			</footer>
 		</form>
 	</body>	
 </html>		
 		
 	
- 
+	<!--<ul>-->
+			<!--<li><a href="#">Books Read</a></li>-->
+			<!--<li><a href="#">Books I will read</a></li>-->
+			<!--<li><a href="#">Books I might read</a></li>-->
+		<!--</ul>--> 
