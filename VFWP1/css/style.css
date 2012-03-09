@@ -1,0 +1,78 @@
+/*
+
+title: additem.html styles
+Visual Frameworks Project 2
+3.8.2012
+by: Harry Lee
+for: CSS Selectors
+
+*/
+
+h1 { 
+	margin: 20px 65px; 
+	border: 1px solid black;
+	padding: 10px;
+	outline: ;
+	width: ;
+	height: ;
+	overflow: ;
+	visibility: ;
+	word-wrap: ;
+	background: ;
+}
+
+h1{
+	color: blue;
+	
+}
+
+label{
+	display: block;
+}
+
+h2{
+	margin: 20px 120px;
+	/*border: 1px solid black;*/
+	padding: 10px;
+	color:  green;
+	outline: 1px dotted blue;
+	background: #F87A17;
+	/*text-align: ;*/
+}
+
+p{
+	color: red;
+}
+
+h3{
+	font-style: italic;
+}
+
+input{
+	color: #F88017;
+}
+
+li{
+color: #842DCE;
+/*display: inline;*/
+}
+
+img{
+	border: 1px solid black;
+}
+	
+
+
+/*
+color: ;
+font-style: ;
+font-family: ;
+font-weight
+font: ;
+line-height: ;
+letter-spacing: ;
+text-align: ;
+text-indent: ;
+text-transform: ;
+text-decoration: ;
+*/
