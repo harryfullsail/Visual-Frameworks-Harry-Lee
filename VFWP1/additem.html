@@ -1,11 +1,12 @@
 <!doctype html>
-<!--Wab App Part 1 Harry D Lee 3/12-->
+<!doctype html>
+<!--Wab App Part 3 Harry D Lee 3/12-->
 <!--html Tag-->
 <html>
 	<!-- Document Head-->
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="description" content="Our very first HTMLS document. How Exciting!" />
+		<meta name="description" content="Our very first HTML5 document. How Exciting!" />
 		<meta name="keywords" content="htm15, mobile developement, Full Sail University" />
 		<!--<meta name="robots" content="index, follow" />-->
 		<meta name="robots" content="noindex,nofollow" />
@@ -13,70 +14,63 @@
 		<meta name="viewport" content="target-densitydpi=device-dpi" />
 		<meta name="HandheldFriendly" content"True">
 		<meta name="ModileOptimized" content="320" />
-		<title>Wab App Part 1</title>	
-		<link href="css/style.css" rel="stylesheet" />	
+		<title>Wab App Part 3</title>	
+		<link href="css/style.css" rel="stylesheet" />
 	</head>
 	<body>
-	<!--img of a book-->
-		<img src="I" />
+		<img src="#" />
 		<header>
 			<h1>Book Organizer</h1>
-			<h2>Book Lists</h2>
-			<h3>Select you Category Group:</h3>
+			<h2>Your Book Lists</h2>
+			<h3>Select your Category Group:</h3>
 		</header>
-		<form action="#" method="post">
-		<li>
-			<!--<ul id="errors"><ul>-->
-			<!--<ul Id="questions">-->
-			<select id="options">	
-				<optgroup>
-					<option value="Books Read">Books Read</option>
-					<option value="Books I will read">Books I will read</option>
-					<option value="Books I might read">Books I might read</option>
-				</optgroup>
-			</select>
-		</li>
+		<form action="#" method="post" />
+				<fieldset id="contentFieldset">
+				<ul id="errors"></ul>
+				<ul id="questions">
+				<select id="options">
+		<optgroup>
+				<option value="Category Group">Category Group</option>
+				<option value="Books Read">Books Read</option>
+				<option value="Books I will read">Books I will read</option>
+				<option value="Books I might read">Books I might read</option>
+		</optgroup>
+				</select>
 		<header>
 			<h3>Book Info:</h3>
 		</header>
-		<ul>
-			<li><label for="author">Author:</label><input type="text" id="author" /></li>
-			<li><label for="title">Title:</label><input type="text" id="title" /></li>
-		</ul>
-		
-			<label>Nunber of books to Display</label>
-		<li>
-			<input type="range" checked value"" id="" /><label for=""></label/>
-		</li>
-		<ul>
 			<ul>
-				<label>Check Your favorite Categories:</label>
-				<li><input type="checkbox" checked value"Mysteries" id="mysteries" /><label for="mysteries">Mysteries</label></li> 
-				<li><input type="checkbox" checked value"Romance" id="romance" /><label for="romance">Romance</label></li>
-				<li><input type="checkbox" checked value"Sci-Fi & Fantassy" id="sci-Fi & Fantassy" /><label for="sci-Fi & Fantassy">Sci-Fi & Fantassy</label></li>
+				<li><label for="author">Author:</label><input type="text" id="author" /></li>
+				<li><label for="title">Title:</label><input type="text" id="title" /></li>
 			</ul>
-		<p>
+			<ul>		
+				<label>Nunber of books to Display</label>
+			<li>
+		 		<input type="range" checked value"" id="" /><label for=""></label/>
+			</li>
+		</ul>	
+		<ul>
+			<label>Check Your favorite Categories:</label>
+			<li><input type="checkbox" checked value"Mysteries" id="mysteries" /><label for="mysteries">Mysteries</label></li> 
+			<li><input type="checkbox" checked value"Romance" id="romance" /><label for="romance">Romance</label></li>
+			<li><input type="checkbox" checked value"Sci-Fi & Fantassy" id="sci-Fi & Fantassy" /><label for="sci-Fi & Fantassy">Sci-Fi & Fantassy</label></li>
+		</ul>			
+			<p>
 			<li>Date Enter:</li>
-			<input type="text" id="date" />
-			<select>
-			<option value=""></option>
-			</select>
-		<p>
-			<Label for"comments">Notes:</Label><textarea id="comments"></textarea/>
-		<p>
-				<input type="submit" value="Submit" id="Submit" /><dr />
+			<input type="date" id="date" />
+				<nav>
+					<Label for"comments">Notes:</Label><textarea id="comments"></textarea/>
+				</nav>	
+				</fieldset>
+				<input type="submit" value="Save" id="Submit" /><br />
 			<footer>
-				<a href="#" id="displayLink">Display Data</a>
-				<a href="#" id="clear">Clear Local Storage</a>
+				<nav>
+					<a href="#" id="displayLink">Display Data</a>
+					<a href="#" id="clear">Clear Local Storage</a>
+					<a href="activity2example.html" id="addNew" style="display:none;">Add New Item</a>
+				</nav>
 			</footer>
 		</form>
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>	
-</html>		
-		
-	
-	<!--<ul>-->
-			<!--<li><a href="#">Books Read</a></li>-->
-			<!--<li><a href="#">Books I will read</a></li>-->
-			<!--<li><a href="#">Books I might read</a></li>-->
-		<!--</ul>--> 
+</html>	

@@ -7,18 +7,11 @@ by: Harry Lee
 for: CSS Selectors
 
 */
-
 h1 { 
-	margin: 20px 65px; 
+	margin: 20px 60px; 
 	border: 1px solid black;
 	padding: 10px;
-	outline: ;
-	width: ;
-	height: ;
-	overflow: ;
-	visibility: ;
-	word-wrap: ;
-	background: ;
+
 }
 
 h1{
@@ -31,17 +24,16 @@ label{
 }
 
 h2{
-	margin: 20px 120px;
+	margin: 10px 50px;
 	/*border: 1px solid black;*/
-	padding: 10px;
+	padding: 5px;
 	color:  green;
 	outline: 1px dotted blue;
 	background: #F87A17;
 	/*text-align: ;*/
 }
 
-p{
-	color: red;
+
 }
 
 h3{
@@ -60,8 +52,27 @@ color: #842DCE;
 img{
 	border: 1px solid black;
 }
-	
 
+
+body{
+  background: #6495ED;
+
+}
+
+
+
+/*
+	margin: ; 
+	border: ;
+	padding: ;
+	outline: ;
+	width: ;
+	height: ;
+	overflow: ;
+	visibility: ;
+	word-wrap: ;
+	background: ;
+*/
 
 /*
 color: ;
