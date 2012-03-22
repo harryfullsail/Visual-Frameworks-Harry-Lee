@@ -18,9 +18,9 @@ window.addEventListener("DOMContentLoaded", function(){
     //Creating a select field element and option
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $('select');
+			selectLi = $('select'),
 			makeSelect = document.createElement('select');
-			makeSelect.setAttribute("id", "groups");
+			makeSelect.setAttribute("id", "group");
 		for(var i=0, j=categoryGroup.length; i<j; i++){
 			var makeOption = document.createElement('option');
 			var optText = categoryGroup[i];
@@ -28,20 +28,20 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}
-		selectLi.appendChild(makeSelect);
+		//selectLi.appendChild(makeSelect);
 	}
 
 	//find selected box
 	function getSelectedCheckbox(){
 		var checkbox = document.forms(0).favorite;
-		for(var i=0; i<checkbox.length; i++){
-			if(checkbox.length[i].checked){
-				favoriteValue = checkbox[i].value;
+		for(var i=0; i<checkBox.length; i++){
+			if(checkBox.length[i].checked){
+				favoriteValue = checkBox[i].value;
 			}
 		}	
 	}
 	
-	function getCheckboxValue(){
+	function getCheckBoxValue(){
 		if($('fav').checked){
 			favoriteValue = $('fav').value;
 		}else{
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				$('addNew').style.display = "inline";
 				break;
 			case "off":
-				$('').style.display = "block";
+				$('book').style.display = "block";
 				$('clear').style.display = "inline";
 				$('displayLink').style.display = "inline";
 				$('addNew').style.display = "none";
@@ -66,6 +66,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				break;
 			default:
 				return false;
+		}
+	}
 	
 	function storeData(key){
 		//It there is on key new item and a key is needed.
@@ -76,8 +78,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			id = key;
 	}
 	//Gather up all of aur field and store.
-	getCheckboxValue();
-	getCheckboxValue();
+	getCheckBoxValue();
+	getCheckBoxValue();
 	var item						={};
 		item.group					=["Group:", $('group').value];
 		item.author					=["Author:", $('author').value];
@@ -85,7 +87,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		item.books					=["Books:", $('books').value];
 		item.favorite				=["Favorite:", favoritevalue];
 		item.date					=["Date:", $('date').value];
-		item.checkbox				=["Checkbok:", $('checkbok').value];
+		item.checkbox				=["Checkbox:", $('checkbox').value];
 		item.notes					=["Notes:", $('notes').value];
 		//Save data into Local Storage.
 		localStorage.setItem(id, JSON.stringify(item));
@@ -95,7 +97,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length == 0){
-			alert("There is no data in Local Storage.");
+			alert("There is no data in Local Storage default date wae added.");
+			autoFillData();
 		}
 		//Write Date
 		var makeDiv = docment.createElement('div');
@@ -113,6 +116,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.creatElement('ul');
 			makeli.appendChild(makeSubList);
+			getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement('li');
 				makeSubList.appendChild(makeSubli);
@@ -123,6 +127,23 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeItemLinks(localStorage.key(i), linkLi); // Create our edit and delet buttons.*/
 		}
 	}
+	// get the image for the right category
+	function getImage(catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var setSrc = documen.createElement('img');
+		varsetSrc = newImg.setAttribute("src", "images/"+catName + ".png");
+		imageLi.appendChild(newImg);
+	}
+	
+	//Auto Populate Local Storage
+	function autoFillData(){
+		//The actual Josn Object
+		for(var n in json){
+			var id = Math.floor(Math.random()*100000001);
+			localStorage.setItem(id, JSON.stringfy(json[n]));
+	}
+}
 	
 	//make Item Links
 	function makeItemLinks(key, linkLi){
@@ -137,6 +158,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		//add a break
 		var breakTag = document.createElement('br');
+		linksLi.appendChild(breakTag);
 		
 		//add a delete single item Link 
 		var deleteLink = document.createElement('a');
@@ -147,7 +169,7 @@ window.addEventListener("DOMContentLoaded", function(){
         deleteLink.innerHTML = deleteText;
         linksLi.appendChild(deleteLink);
     }
-    function editItem(){
+    function editItem() {
     	//Grab data from items in local storage
     	var value = localStorage.getItem(this.key);
     	var item = JSON.parse(value);
@@ -156,26 +178,25 @@ window.addEventListener("DOMContentLoaded", function(){
     	toggleControls("off");
     	
     	//populate the from with local storage
-    	$("group").value 	= item.group[1];
-    	$("author").value 	= item.author[1];
-    	$("title").value	= item.title[1];
-    	$("book").value		= item.book[1];
+    	$('group').value 	= item.group[1];
+    	$('author').value 	= item.author[1];
+    	$('title').value	= item.title[1];
+    	$('book').value		= item.book[1];
     	var checkBok 		= document.forms[0].Value;
-    	for(var i0; i<checkBok.length; i++){
-    			if(checkBok[i].value == "" && item.value[i] == ""){
-    			checkBok[i].setAttribute("checked", "checked");
-    		}else{ 
-    			if(checkBok[i].value == "" && item.value[1] == ""){
-    			checkBok[i].setAttribute("checked", "checked");
+    	for(var i=0; i<checkBok.length; i++){
+    			if(checkBox[i].value == "" && item.value[i] == ""){
+    			checkBox[i].setAttribute("checked", "checked");
+    		}else if(checkBox[i].value == "" && item.value[1] == ""){
+    			checkBox[i].setAttribute("checked", "checked");
     		}
     	}
     	if (item.favorite[1] == "Yes") {
     		$('fav').setattribute("checked", "checked");
     		
     	}
-    	$("Checkbok").value 	= item.Checkbok[1];
-    	$("date").value 		= item.date[1];
-    	$("notes").value 		= item.notes[1];
+    	$('CheckBox').value 	= item.CheckBox[1];
+    	$('date').value 		= item.date[1];
+    	$('notes').value 		= item.notes[1];
     	
     	//remove the intial lsitenerfrom input save button
     	save.removeEventListener("clink", storeData);
@@ -259,20 +280,24 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	function storeData(){
+		localStorage.setItem();
+	}
+	
 	// variable defaults
 	var categoryGroup = ["Category Group", "Books Read", "Books I will read", "Books I might read"],
 		value,
 		favoriteValue = "No"
 		errMsg = $('errors');
-	;
-	makeCats();
+	
+	//makeCats();
 	
 	//Set Link & Submit Click Events
 	var displayLink = $('displayLink');
-	displayLink.addEventListener("click",  DisplayData);
+	displayLink.addEventListener("click",  getData);
 	var clearLink = $('clear');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
-	save.addEventListener("Click", validate);
+	save.addEventListener("Click", storeData);
 
 });
